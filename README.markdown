@@ -1,7 +1,9 @@
 
-# Overview
+# Overview:
 
 A Django project to run an arbitrary Django app.
+
+# Possibly useful commands:
 
 ## Varnish
 
