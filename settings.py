@@ -21,6 +21,9 @@ DATABASES = {
 import os
 
 
+from localsettings import *
+
+
 ## non-Django settings:
 
 REDIS_HOST = '127.0.0.1'
@@ -38,10 +41,9 @@ ROOT = parentOf(parentOf(os.path.abspath(__file__)))
 
 MAIN_APP = os.environ['APP']
 
-APPS = [
-    MAIN_APP,
-    'util_app',
-]
+if 'APPS' not in locals():
+    APPS = []
+APPS += [MAIN_APP]
 
 
 ## Django settings:
