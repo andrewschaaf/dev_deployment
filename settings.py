@@ -46,7 +46,16 @@ if 'APPS' not in locals():
 APPS += [MAIN_APP]
 
 
+PJ_PATH = []
+for name in os.listdir(ROOT):
+    jsDir = '%s/%s/js' % (ROOT, name)
+    if os.path.isdir(jsDir):
+        PJ_PATH.append(jsDir)
+
+
 ## Django settings:
+
+DEVMODE = True
 
 DEBUG = True
 ROOT_URLCONF = '%s.urls' % MAIN_APP
