@@ -20,9 +20,6 @@ except ImportError:
     pass
 
 
-# Add this repo's parent to sys.path
-sys.path.append()
-
 ## non-Django settings:
 
 REDIS_HOST = '127.0.0.1'
