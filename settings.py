@@ -20,6 +20,9 @@ except ImportError:
     pass
 
 
+# Add this repo's parent to sys.path
+sys.path.append()
+
 ## non-Django settings:
 
 REDIS_HOST = '127.0.0.1'
@@ -30,10 +33,13 @@ TYRANT_PORT = 7000
 
 EXCEPTION_JABBER = None
 
-def parentOf(path):
-    return '/'.join(path.rstrip('/').split('/')[:-1])
+def parentOf(path, n=1):
+    return '/'.join(path.rstrip('/').split('/')[:-n])
 
-ROOT = parentOf(parentOf(os.path.abspath(__file__)))
+ROOT = parentOf(os.path.abspath(__file__), n=2)
+
+# Add this repo's parent to sys.path
+sys.path.append(ROOT)
 
 MAIN_APP = os.environ['APP']
 
