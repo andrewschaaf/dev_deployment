@@ -12,7 +12,7 @@ DATABASES = {
 }
 '''
 
-import os
+import os, sys
 
 try:
     from localsettings import *
