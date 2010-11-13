@@ -54,6 +54,16 @@ for name in os.listdir(ROOT):
 
 ## Django settings:
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '%s/dev_deployment/tmpdir/db.sqlite3' % ROOT,
+    }
+}
+
+
+
 DEVMODE = True
 
 DEBUG = True
