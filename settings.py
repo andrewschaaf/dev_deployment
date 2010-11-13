@@ -1,11 +1,5 @@
 '''
-localsettings.py:
-
-EXCEPTION_JABBER = {
-    'to_account': '',
-    'from_account': '',
-    'from_password': '',
-}
+localsettings.py (excluded by .gitignore):
 
 DATABASES = {
     'default': {
@@ -20,8 +14,10 @@ DATABASES = {
 
 import os
 
-
-from localsettings import *
+try:
+    from localsettings import *
+except ImportError:
+    pass
 
 
 ## non-Django settings:
@@ -99,4 +95,8 @@ TEMPLATE_DEBUG = DEBUG
 MANAGERS = ADMINS
 
 
-from localsettings import *
+try:
+    from localsettings import *
+except ImportError:
+    pass
+
